@@ -89,10 +89,11 @@ public class Day6Part1 {
 		int i = x;
 		int j = y;
 		while(true) {
-			System.out.println(" i: "+ i+" j :"+j+ " direction :" + dir);
+			//System.out.println(" i: "+ i+" j :"+j+ " direction :" + dir);
 			if(i<0 || i>=m || j<0 || j>=n) {
 				break;
 			}
+			
 			if(matrix[i][j] == '#') {
 				if(dir == 1) {
 					i+=bottom[0];
@@ -121,6 +122,7 @@ public class Day6Part1 {
 				}
 			}else {
 				set.add(i+","+j);
+				matrix[i][j] = 'X';
 				if(dir == 1) {
 					i+=top[0];
 					j+=top[1];
@@ -157,13 +159,14 @@ public class Day6Part1 {
 				}
 			}
 		}
-//		for(int i=0;i<m;i++) {
-//			for(int j=0;j<n;j++) {
-//				System.out.print(matrix[i][j]);
-//			}
-//			System.out.println();
-//		}
+
 		move2(posX, posY, 1, m, n, matrix);
+		for(int i=0;i<m;i++) {
+			for(int j=0;j<n;j++) {
+				System.out.print(matrix[i][j]);
+			}
+			System.out.println();
+		}
 		//System.out.println(set);
 		return set.size();
 	}
