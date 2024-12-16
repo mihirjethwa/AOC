@@ -3,7 +3,6 @@ package com.mihir.AOC24;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import com.google.common.base.Charsets;
@@ -14,8 +13,8 @@ public class Day11Part1 {
 	String inputTest = "resource/2024/Day11Test.txt";
 	
 	private long arrange(List<Long> initial) {
-		for(int i=1;i<=75;i++) {
-			List<Long> temp = new LinkedList<>();
+		for(int i=1;i<=25;i++) {
+			List<Long> temp = new ArrayList<>();
 			for(int j=0;j<initial.size();j++) {
 				if(initial.get(j) == 0) {
 					temp.add((long) 1);
@@ -27,14 +26,13 @@ public class Day11Part1 {
 					temp.add(initial.get(j)*2024);
 				}
 			}
-			System.out.println(i);
 			initial = temp;
 		}
 		return initial.size();
 	}
 	
 	public long getResult(List<String> in) {
-		List<Long> list = new LinkedList<>();
+		List<Long> list = new ArrayList<>();
 		long result = 0;
 		for(String s: in.get(0).split(" ")) {
 			list.add(Long.parseLong(s));
