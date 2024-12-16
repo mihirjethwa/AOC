@@ -1,14 +1,12 @@
 package com.mihir.AOC24;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
 
-public class Day10Part1 {
+public class Day10Part2 {
 	String input = "resource/2024/Day10.txt";
 	String inputTest = "resource/2024/Day10Test.txt";
 	int m;
@@ -55,7 +53,7 @@ public class Day10Part1 {
 	
     public static void main( String[] args ) throws IOException
     {
-        Day10Part1 solution = new Day10Part1();
+        Day10Part2 solution = new Day10Part2();
         solution.run();
     }
     
